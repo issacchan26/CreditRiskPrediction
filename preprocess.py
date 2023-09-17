@@ -84,7 +84,7 @@ def sample_dataset(df, gt_col, test_ratio):
     return df_sampled, X_train, X_test, y_train, y_test
 
 
-input_file = "/home/ping_linux/PycharmProjects/issac/risk/data/credit_risk_dataset.csv"
+input_file = "path to credit_risk_dataset.csv"
 pd.set_option('display.max_columns', None)
 df = pd.read_csv(input_file, on_bad_lines='skip')
 visualisation(df, gt_col='loan_status')
