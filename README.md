@@ -15,7 +15,8 @@ Default device is GPU, please comment the line of 'task_type="GPU",' if using CP
 
 ## Performance
 Most of the method in Kaggle are using full dataset for training and evaluation dataset  
-After considering the unbalance on ground truth may lead to bias on the model, this repo will resample and balance the data of groundtruth == 1 and groundtruth == 0  
+After considering the unbalance on ground truth may lead to bias on the model, 
+This repo will resample and balance the groundtruth data where number of (groundtruth == 1) equals to number of (groundtruth == 0)  
 Currently the model can reach ~86.81 of accuracy in balanced dataset, while reach ~93% in full dataset
 
 
