@@ -30,9 +30,9 @@ def visualisation(vis, gt_col):
     print('\n', '-----------------------------------------', '\n')
 
 
-def ten_years_old_with_thirty_years_experience(df):
+def ten_years_old_with_thirty_years_experience(df):  # drop the data that 'person_emp_length' >= 'person_age', it does not exist in real life data
 
-    df.drop(df[df['person_emp_length'] >= df['person_age']].index, inplace = True)  # drop the data that 'person_emp_length' >= 'person_age', it does not exist in real life data
+    df.drop(df[df['person_emp_length'] >= df['person_age']].index, inplace = True)  
     # l = len(df[df['person_emp_length'] >= df['person_age']].index)
     # print('dropped %d outliers' %l)
 
