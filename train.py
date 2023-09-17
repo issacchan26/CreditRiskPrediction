@@ -5,7 +5,7 @@ import pandas as pd
 from catboost import CatBoostClassifier
 from preprocess import ten_years_old_with_thirty_years_experience, age_preprocess, df_label_encoder, col_normalization, sample_dataset
 
-input_file = "/home/ping_linux/PycharmProjects/issac/risk/data/credit_risk_dataset.csv"
+input_file = "path to credit_risk_dataset.csv"
 pd.set_option('display.max_columns', None)
 df = pd.read_csv(input_file, on_bad_lines='skip')
 
