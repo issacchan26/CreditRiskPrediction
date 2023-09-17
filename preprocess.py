@@ -32,7 +32,7 @@ def visualisation(vis, gt_col):
 
 def ten_years_old_with_thirty_years_experience(df):
 
-    df.drop(df[df['person_emp_length'] >= df['person_age']].index, inplace = True)
+    df.drop(df[df['person_emp_length'] >= df['person_age']].index, inplace = True)  # drop the data that 'person_emp_length' >= 'person_age', it does not exist in real life data
     # l = len(df[df['person_emp_length'] >= df['person_age']].index)
     # print('dropped %d outliers' %l)
 
@@ -51,7 +51,7 @@ def age_preprocess(df, col):
 
 def df_label_encoder(df):
 
-    le = preprocessing.LabelEncoder()
+    le = preprocessing.LabelEncoder()  # transform all data into numerical data
     columns = df.columns.values
     for column in columns:
         if df[column].dtype != np.int64 and df[column].dtype != np.float64:
@@ -63,7 +63,7 @@ def df_label_encoder(df):
 def col_normalization(df):
 
     for i in df:
-        df[i] = df[i] /df[i].abs().max()
+        df[i] = df[i] /df[i].abs().max()  # normalize all data into range of 0 to 1
 
     return df
 
@@ -75,7 +75,7 @@ def sample_dataset(df, gt_col, test_ratio):
     df_target_0 = df.loc[df[gt_col] == 0].sample(n=df_target_1.shape[0])  # balance the data
     df_sampled = pd.concat([df_target_1, df_target_0], ignore_index=True)
     df_sampled = df_sampled.sample(frac=1).reset_index(drop=True)  # shuffle the data
-    # print(df_sampled.groupby([gt_col])[gt_col].count())
+    print(df_sampled.groupby([gt_col])[gt_col].count())
 
     X = df_sampled.drop([gt_col], axis=1).values
     y = df_sampled[gt_col].values
