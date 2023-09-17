@@ -39,7 +39,7 @@ def ten_years_old_with_thirty_years_experience(df):  # drop the data that 'perso
     return df
 
 
-def age_preprocess(df, col):
+def age_preprocess(df, col):  # drop the outliers and divide ages into age groups
 
     df = df[df[col]<60].reset_index(drop=True)  # drop the data that age > 60
     bins= [19,25,30,35,40,45,50,55,60]
